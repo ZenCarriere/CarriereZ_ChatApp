@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "nodemon app",
+    "start-ui": "browser-sync start --proxy 'localhost:5050' --files 'index.html' 'public'",
     "start-browser": "browser-sync start --proxy 'localhost:5050' --files 'index.html' 'public'",
     "start": "node app"
   },
