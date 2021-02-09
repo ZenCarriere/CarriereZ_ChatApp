@@ -1,14 +1,29 @@
+import ChatMessage from "./components/TheMessageComponent.js"
+
+
 (() => {
     console.log('fired');
 
     //load the socket library and make a connecty
     const socket = io();
 
-    const vm = new VTTCue({
+    //event handling
+    function setUserId({sID, message}) {
+
+        vm.socketID = sID;
+    }
+
+    function appendMessage(message) {
+        vm.messages.push(message);
+    }
+
+    const vm = new Vue({
         data: {
             messages: [],
             nickname: "",
-            username: ""
+            username: "",
+            socketID: "",
+            message: ""
         },
 
         created: function() {
@@ -16,7 +31,19 @@
         },
 
         methods: {
+            dispatchMessage(){
+                socket.emit('chatmessage', {content: this.message, name: this.nickname || "Anon"});
 
+                this.message = "";
+            }
+
+        },
+
+        components: {
+            newmessage: ChatMessage
         }
     }).$mount("#app");
+
+    socket.addEventListener("connected", setUserId);
+    socket.addEventListener('message', appendMessage);
 })();
