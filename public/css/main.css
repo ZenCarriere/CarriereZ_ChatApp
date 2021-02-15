@@ -5,8 +5,8 @@
   box-sizing: border-box; }
 
 body {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: darkgray;
   font-family: arial, helvetica, sans-serif;
   font-size: 16px; }
 
@@ -17,14 +17,14 @@ a {
 
 .new-message {
   padding: 10px;
-  background-color: blue;
+  background-color: pink;
   color: white;
   border-radius: 8px;
   float: left;
   clear: both; }
 
 .my-message {
-  background-color: red;
+  background-color: green;
   float: right; }
 
 /*# sourceMappingURL=main.css.map */
