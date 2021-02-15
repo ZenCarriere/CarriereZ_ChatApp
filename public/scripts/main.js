@@ -1,5 +1,5 @@
 import ChatMessage from "./components/TheMessageComponent.js"
-
+import NotificationMessage from "./components/NotificationComponent.js"
 
 (() => {
     console.log('fired');
@@ -8,7 +8,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
     const socket = io();
 
     //event handling
-    function setUserId({sID, message}) {
+    function setUserId({sID}) {
 
         vm.socketID = sID;
     }
@@ -17,9 +17,14 @@ import ChatMessage from "./components/TheMessageComponent.js"
         vm.messages.push(message);
     }
 
+    function appendNotification(notification) {
+        vm.notifications.push(notification);
+    }
+
     const vm = new Vue({
         data: {
             messages: [],
+            notifications: [],
             nickname: "",
             username: "",
             socketID: "",
@@ -32,18 +37,20 @@ import ChatMessage from "./components/TheMessageComponent.js"
 
         methods: {
             dispatchMessage(){
-                socket.emit('chatmessage', {content: this.message, name: this.nickname || "Anon"});
+                socket.emit('chatmessage', {content: this.message, name: this.nickname || "Secret Chatot"});
 
                 this.message = "";
-            }
+            },
 
         },
 
         components: {
-            newmessage: ChatMessage
+            newmessage: ChatMessage,
+            newnotification: NotificationMessage
         }
     }).$mount("#app");
 
     socket.addEventListener("connected", setUserId);
+    socket.addEventListener("connected", appendNotification);
     socket.addEventListener('message', appendMessage);
 })();
