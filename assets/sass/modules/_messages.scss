@@ -1,0 +1,23 @@
+.new-message {
+    font-family:"Arial Rounded MT Bold", Arial, sans-serif;
+    padding:10px;
+    background-color:#F36F5B;
+    color:white;
+    border-radius: 8px;
+    float: left;
+    clear:both;
+    margin-bottom:4px;
+    margin-top:4px;
+    margin-left:10px;
+}
+
+.my-message {
+    background-color: #3294D1;
+    float:right;
+    margin-left:0px;
+    margin-right:10px;
+}
+
+.messages{
+    height:400px;
+}
