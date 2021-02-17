@@ -38,6 +38,19 @@ a {
   .divider {
     height: 6px;
     margin-top: 12px; } }
+#Logo {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px; }
+
+@media screen and (min-width: 1000px) {
+  #Logo {
+    width: 15%;
+    height: 15%;
+    padding-top: 15px; } }
 .new-message {
   font-family: "Arial Rounded MT Bold", Arial, sans-serif;
   padding: 10px;
@@ -61,7 +74,7 @@ a {
   margin-right: 10px; }
 
 .messages {
-  height: 400px; }
+  height: 380px; }
 
 .notifications {
   margin-top: 10px;
@@ -129,7 +142,7 @@ textarea {
   .text-message {
     border: 8px solid #3294D1;
     border-radius: 14px;
-    width: 1150px;
+    width: 81%;
     margin-bottom: 15px;
     margin-left: 30px; }
 
