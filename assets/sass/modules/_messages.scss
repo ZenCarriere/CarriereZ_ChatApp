@@ -9,6 +9,7 @@
     margin-bottom:4px;
     margin-top:4px;
     margin-left:10px;
+    max-width:100%;
 }
 
 .new-message h4{
@@ -24,4 +25,49 @@
 
 .messages{
     height:400px;
+}
+.notifications{
+    margin-top:10px;
+    margin-left:10px;
+    padding-bottom:10px;
+    font-family:"Arial Rounded MT Bold", Arial, sans-serif;
+    font-size:16px;
+}
+
+@media screen and (min-width: 1000px) {
+
+    .new-message {
+        padding:18px;
+        border-radius: 10px;
+        margin-bottom:6px;
+        margin-top:6px;
+        margin-left:60px;
+        max-width:100%;
+    }
+    
+    .new-message h4{
+        font-size:22px;
+    }
+
+    .new-message p{
+        font-size:18px;
+    }
+    
+    .my-message {
+        margin-left:0px;
+        margin-right:60px;
+    }
+    
+    .messages{
+        height:600px;
+    }
+    .notifications{
+        margin-top:20px;
+        margin-left:20px;
+        padding-bottom:20px;
+        font-family:"Arial Rounded MT Bold", Arial, sans-serif;
+        font-size:18px;
+    }
+
+
 }
